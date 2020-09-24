@@ -5536,3 +5536,4 @@ X509_STORE_CTX_set_get_crl              5663	3_2_0	EXIST::FUNCTION:
 X509_STORE_CTX_set_current_reasons      5664	3_2_0	EXIST::FUNCTION:
 OSSL_STORE_delete                       5665	3_2_0	EXIST::FUNCTION:
 BIO_ADDR_copy                           5666	3_2_0	EXIST::FUNCTION:SOCK
+ossl_safe_getenv                        ?	3_0_0	EXIST::FUNCTION:
