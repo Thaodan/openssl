@@ -1453,7 +1453,7 @@ libcrypto.pc:
 	    echo 'Version: '$(VERSION); \
 	    echo 'Libs: -L$${libdir} -lcrypto'; \
 	    echo 'Libs.private: $(LIB_EX_LIBS)'; \
-	    echo 'Cflags: -I$${includedir}' ) > libcrypto.pc
+	    echo 'Cflags: -DOPENSSL_LOAD_CONF -I$${includedir}' ) > libcrypto.pc
 
 libssl.pc:
 	@ ( echo 'prefix=$(INSTALLTOP)'; \
@@ -1470,7 +1470,7 @@ libssl.pc:
 	    echo 'Version: '$(VERSION); \
 	    echo 'Requires.private: libcrypto'; \
 	    echo 'Libs: -L$${libdir} -lssl'; \
-	    echo 'Cflags: -I$${includedir}' ) > libssl.pc
+	    echo 'Cflags: -DOPENSSL_LOAD_CONF -I$${includedir}' ) > libssl.pc
 
 openssl.pc:
 	@ ( echo 'prefix=$(INSTALLTOP)'; \
