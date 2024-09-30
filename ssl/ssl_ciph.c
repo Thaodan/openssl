@@ -1623,7 +1623,15 @@ STACK_OF(SSL_CIPHER) *ssl_create_cipher_list(SSL_CTX *ctx,
      */
     ok = 1;
     rule_p = rule_str;
-    if (HAS_PREFIX(rule_str, "DEFAULT")) {
+    if (HAS_PREFIX(rule_str, "DEFAULT_SUSE")) {
+            ok = ssl_cipher_process_rulestr(SSL_DEFAULT_SUSE_CIPHER_LIST,
+                                            &head, &tail, ca_list, c);
+            rule_p += 12;
+            if (*rule_p == ':')
+                    rule_p++;
+
+    }
+    else if (HAS_PREFIX(rule_str, "DEFAULT")) {
         ok = ssl_cipher_process_rulestr(OSSL_default_cipher_list(),
                                         &head, &tail, ca_list, c);
         rule_p += 7;
